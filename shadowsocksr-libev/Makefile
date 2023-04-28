@@ -56,7 +56,7 @@ CONFIGURE_ARGS += \
 	--disable-assert \
 	--enable-system-shared-lib
 
-TARGET_CFLAGS += -flto
+TARGET_CFLAGS += -flto -Wno-error=use-after-free
 TARGET_LDFLAGS += -Wl,--gc-sections,--as-needed
 
 $(foreach component,$(SHADOWSOCKSR_COMPONENTS), \
